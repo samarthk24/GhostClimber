@@ -6,7 +6,6 @@ var ghost, ghostImg;
 var invisibleBlockGroup, invisibleBlock;
 var gameState = "play"
 
-
 function preload(){
   towerImg = loadImage("tower.png");
   doorImg = loadImage("door.png");
