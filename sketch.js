@@ -148,4 +148,5 @@ function reset() {
   climbersGroup.destroyEach();
   invisibleBlockGroup.destroyEach();
   ghost.visible = true;
+  ghost.y = 100;
 }
