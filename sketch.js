@@ -28,7 +28,7 @@ function setup() {
   climbersGroup = new Group();
   invisibleBlockGroup = new Group();
   
-  ghost = createSprite(width/2,height/2,50,50);
+  ghost = createSprite(width/2, 100, 50, 50);
   ghost.scale = 0.5;
   ghost.addImage("ghost", ghostImg);
 }
@@ -77,7 +77,7 @@ function draw() {
         ghost.velocityY = 0;
       }
       if(invisibleBlockGroup.isTouching(ghost) || ghost.y > 600){
-        ghost.destroy();
+        ghost.visible = false;
         gameState = "end";
       }
       
@@ -89,6 +89,11 @@ function draw() {
     fill("yellow");
     textSize(30);
     text("Game Over", width/2-100,height/2);
+    
+    if(touches.length>0){
+      reset();
+      touches = [];
+    }
   }
 }
 
@@ -135,4 +140,12 @@ function spawnDoors(){
 
     invisibleBlock.visible = false;
   }
+}
+
+function reset() {
+  gameState = "play"
+  doorsGroup.destroyEach();
+  climbersGroup.destroyEach();
+  invisibleBlockGroup.destroyEach();
+  ghost.visible = true;
 }
