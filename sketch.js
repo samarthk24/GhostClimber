@@ -55,9 +55,10 @@ function draw() {
       // write a code to move right when right arrow is pressed
       
     }
-    if(keyDown("space")){
+    if(keyDown("space") || touches.length>0){
   
          ghost.velocityY = -10;
+      touches = [];
 
       // write a code to move up when space arrow is pressed
       
