@@ -148,4 +148,5 @@ function reset() {
   invisibleBlockGroup.destroyEach();
   ghost.visible = true;
   ghost.y = 100;
+  ghost.velocityY = 0;
 }
